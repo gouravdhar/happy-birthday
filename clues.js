@@ -66,8 +66,15 @@ The blessings from the innocent.`,
   },
   {
     from: "Alok",
-    clue: `[Placeholder clue for Alok]`,
-    answers: ["alok"],
+    clue: `And here we have come,
+Locking in on the handsome,
+Of them all,
+Knocking at your door.
+But, what simple act he did,
+That got you scared at spice club,
+Look and find out, What's that activity?
+Watching out, Locking his festivity?`,
+    answers: ["stare", "staring"],
     video: "https://drive.google.com/file/d/1n0oSGxANK-Ja7rp9LzYc8T5mUdbPuNkf/view?usp=drive_link",
   },
   {
