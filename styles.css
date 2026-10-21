@@ -58,10 +58,9 @@ body {
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
 }
 
-/* Opacity only: transforms on an iframe's ancestor break tap targeting in mobile Safari */
-.screen { text-align: center; animation: fade 0.5s ease both; }
+.screen { text-align: center; animation: rise 0.5s ease both; }
 
-@keyframes fade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes rise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
 
 .eyebrow {
   margin: 0 0 6px; font-size: 0.8rem; letter-spacing: 0.12em;

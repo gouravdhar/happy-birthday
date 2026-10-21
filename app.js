@@ -50,8 +50,7 @@
     ["intro", "clue", "finale"].forEach((id) => ($(id).hidden = id !== screenId));
     $("journeyBtn").hidden = !state.started;
     $("progressText").textContent = `${state.solved}/${N}`;
-    // Instant, not smooth: on mobile the first tap during a smooth scroll only stops the scroll
-    window.scrollTo(0, 0);
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
   function render() {
