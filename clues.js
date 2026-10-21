@@ -168,8 +168,7 @@ It never got to distribution.`,
     from: "Verma",
     clue: `[Placeholder clue for Verma]`,
     answers: ["verma"],
-    // NOTE: same video as Sunamya — replace with the correct one.
-    video: "videos/sunamya.mp4",
+    video: "videos/verma.mp4",
   },
   {
     from: "Shilpa",
