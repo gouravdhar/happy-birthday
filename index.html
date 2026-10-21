@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#2a1033" />
+  <title>Happy Birthday Riya</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg-hearts" aria-hidden="true"></div>
+  <canvas id="confetti" aria-hidden="true"></canvas>
+
+  <header class="topbar">
+    <button id="journeyBtn" class="chip" hidden>💌 <span id="progressText">0/0</span></button>
+    <button id="resetBtn" class="chip ghost">↺ Reset</button>
+  </header>
+
+  <main id="app">
+    <!-- Intro -->
+    <section id="intro" class="card screen" hidden>
+      <p class="eyebrow">For Riya Tudu</p>
+      <h1 class="script">Happy Birthday!</h1>
+      <p id="introText" class="poem"></p>
+      <button id="startBtn" class="btn">Let's begin ✨</button>
+    </section>
+
+    <!-- Clue -->
+    <section id="clue" class="card screen" hidden>
+      <div class="progress"><div id="progressBar" class="progress-fill"></div></div>
+      <p class="eyebrow" id="clueLabel">Clue 1</p>
+
+      <div id="cluePanel">
+        <p id="clueText" class="poem"></p>
+        <form id="answerForm" autocomplete="off">
+          <input id="answerInput" type="text" placeholder="Who is it?" autocapitalize="words" spellcheck="false" />
+          <button class="btn" type="submit">Unlock 🔓</button>
+        </form>
+        <p id="feedback" class="feedback" aria-live="polite"></p>
+      </div>
+
+      <div id="videoPanel" hidden>
+        <h2 class="script" id="fromName"></h2>
+        <div class="video-wrap"><iframe id="videoFrame" allow="autoplay; fullscreen" allowfullscreen></iframe></div>
+        <a id="videoLink" class="small-link" target="_blank" rel="noopener">Video not loading? Open it in Drive ↗</a>
+        <button id="nextBtn" class="btn">Next clue →</button>
+      </div>
+    </section>
+
+    <!-- Finale -->
+    <section id="finale" class="card screen" hidden>
+      <h1 class="script">💖 Happy 30th 💖</h1>
+      <p id="finaleText" class="poem"></p>
+      <button id="rewatchBtn" class="btn">Rewatch the wishes</button>
+    </section>
+  </main>
+
+  <!-- Journey drawer: every solved clue can be revisited -->
+  <div id="drawer" class="drawer" hidden>
+    <div class="drawer-panel card">
+      <div class="drawer-head">
+        <h3>Your journey</h3>
+        <button id="closeDrawer" class="chip ghost" aria-label="Close">✕</button>
+      </div>
+      <ol id="journeyList" class="journey"></ol>
+    </div>
+  </div>
+
+  <script src="clues.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
