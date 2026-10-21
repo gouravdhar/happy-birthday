@@ -50,7 +50,8 @@
     ["intro", "clue", "finale"].forEach((id) => ($(id).hidden = id !== screenId));
     $("journeyBtn").hidden = !state.started;
     $("progressText").textContent = `${state.solved}/${N}`;
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    // Instant, not smooth: on mobile the first tap during a smooth scroll only stops the scroll
+    window.scrollTo(0, 0);
   }
 
   function render() {
@@ -189,7 +190,7 @@
         life: 0,
       });
     }
-    if (!animating) { animating = true; requestAnimationFrame(tick); }
+    if (!animating) { animating = true; canvas.style.display = "block"; requestAnimationFrame(tick); }
   }
 
   function tick() {
@@ -210,7 +211,12 @@
       ctx.restore();
     }
     if (pieces.length) requestAnimationFrame(tick);
-    else { animating = false; ctx.clearRect(0, 0, innerWidth, innerHeight); }
+    else {
+      // Remove the canvas entirely when idle so it can never sit over the video iframe
+      animating = false;
+      ctx.clearRect(0, 0, innerWidth, innerHeight);
+      canvas.style.display = "none";
+    }
   }
 
   render();

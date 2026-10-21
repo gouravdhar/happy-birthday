@@ -35,7 +35,7 @@ body {
   background-position: 0 0, 30px 45px;
 }
 
-#confetti { position: fixed; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 50; }
+#confetti { position: fixed; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 50; display: none; }
 
 .topbar {
   position: sticky; top: 0; z-index: 10;
@@ -58,9 +58,10 @@ body {
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
 }
 
-.screen { text-align: center; animation: rise 0.5s ease both; }
+/* Opacity only: transforms on an iframe's ancestor break tap targeting in mobile Safari */
+.screen { text-align: center; animation: fade 0.5s ease both; }
 
-@keyframes rise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+@keyframes fade { from { opacity: 0; } to { opacity: 1; } }
 
 .eyebrow {
   margin: 0 0 6px; font-size: 0.8rem; letter-spacing: 0.12em;
