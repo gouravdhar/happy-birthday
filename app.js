@@ -190,7 +190,7 @@
         life: 0,
       });
     }
-    if (!animating) { animating = true; canvas.style.display = "block"; requestAnimationFrame(tick); }
+    if (!animating) { animating = true; requestAnimationFrame(tick); }
   }
 
   function tick() {
@@ -211,12 +211,7 @@
       ctx.restore();
     }
     if (pieces.length) requestAnimationFrame(tick);
-    else {
-      // Remove the canvas entirely when idle so it can never sit over the video iframe
-      animating = false;
-      ctx.clearRect(0, 0, innerWidth, innerHeight);
-      canvas.style.display = "none";
-    }
+    else { animating = false; ctx.clearRect(0, 0, innerWidth, innerHeight); }
   }
 
   render();

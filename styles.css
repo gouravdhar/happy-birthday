@@ -35,7 +35,7 @@ body {
   background-position: 0 0, 30px 45px;
 }
 
-#confetti { position: fixed; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 50; display: none; }
+#confetti { position: fixed; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 50; }
 
 .topbar {
   position: sticky; top: 0; z-index: 10;
