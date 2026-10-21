@@ -35,8 +35,19 @@
     return n.length > 0 && clue.answers.some((a) => normalize(a) === n);
   };
 
-  const driveId = (url) => (url.match(/\/d\/([^/?]+)/) || [])[1];
-  const embedUrl = (url) => (driveId(url) ? `https://drive.google.com/file/d/${driveId(url)}/preview` : url);
+  // Must be called from a tap/click handler: browsers only allow playback with sound
+  // when it starts from a user gesture.
+  const playVideo = () => {
+    const v = $("video");
+    if (!$("videoPanel").hidden && v.getAttribute("src")) v.play().catch(() => {});
+  };
+
+  const stopVideo = () => {
+    const v = $("video");
+    v.pause();
+    v.removeAttribute("src");
+    v.load();
+  };
 
   const wrongMessages = [
     "Not quite! Try again 💭",
@@ -47,6 +58,7 @@
 
   // ---------- Rendering ----------
   function show(screenId) {
+    if (screenId !== "clue") stopVideo();
     ["intro", "clue", "finale"].forEach((id) => ($(id).hidden = id !== screenId));
     $("journeyBtn").hidden = !state.started;
     $("progressText").textContent = `${state.solved}/${N}`;
@@ -68,12 +80,10 @@
 
     if (solved) {
       $("fromName").textContent = `With love, from ${clue.from}`;
-      const src = embedUrl(clue.video);
-      if ($("videoFrame").getAttribute("src") !== src) $("videoFrame").src = src;
-      $("videoLink").href = clue.video;
+      if ($("video").getAttribute("src") !== clue.video) $("video").src = clue.video;
       $("nextBtn").textContent = i + 1 < N ? "Next clue →" : "One last thing… 💖";
     } else {
-      $("videoFrame").removeAttribute("src"); // stop any playing video
+      stopVideo();
       $("clueText").textContent = clue.clue;
       $("answerInput").value = "";
       $("feedback").textContent = "";
@@ -106,6 +116,7 @@
     save();
     closeDrawer();
     render();
+    playVideo();
   }
 
   const openDrawer = () => { renderJourney(); $("drawer").hidden = false; };
@@ -132,6 +143,7 @@
       input.blur();
       confetti();
       render();
+      playVideo();
     } else {
       const fb = $("feedback");
       fb.textContent = wrongMessages[Math.floor(Math.random() * wrongMessages.length)];
@@ -158,7 +170,6 @@
     if (!confirm("Reset all progress? Every clue will be locked again.")) return;
     try { localStorage.removeItem(STORAGE_KEY); } catch { /* storage blocked */ }
     state = defaultState();
-    $("videoFrame").removeAttribute("src");
     closeDrawer();
     render();
   };

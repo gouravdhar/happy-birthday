@@ -2,7 +2,7 @@
 //
 // - `answers`: every accepted answer. Matching ignores case, spaces and punctuation,
 //   and "&" is treated the same as "and".
-// - `video`: a Google Drive share link. The file must be shared as "Anyone with the link".
+// - `video`: path to an .mp4 in the videos/ folder (H.264 + AAC plays on every browser).
 
 window.INTRO = `30 years ago today, the world became a brighter and better place as the cutest, kindest and sweetest girl was born.
 
@@ -24,13 +24,7 @@ Is very different from what others see,
 Enter their answer here,
 And buzzing you'll bee.`,
     answers: ["madhurakshi", "maddy"],
-    video: "https://drive.google.com/file/d/1X-sK89PlsC0wX4cb8250vEUh5oNz0bzM/view?usp=drive_link",
-  },
-  {
-    from: "Shilpa",
-    clue: `[Placeholder clue for Shilpa]`,
-    answers: ["shilpa", "shlipa"],
-    video: "https://drive.google.com/file/d/19ZitQO1seeqAwtC71FgQFzTDZkEiOOu7/view?usp=drive_link",
+    video: "videos/madhurakshi.mp4",
   },
   {
     from: "Aalind & Darshana",
@@ -43,26 +37,25 @@ Of this new participant,
 And you shall seek,
 The blessings from the innocent.`,
     answers: ["nilay", "nicholas"],
-    video: "https://drive.google.com/file/d/1QjIDLGnWDpjrhV3hlVkyn2cup-L9vCNE/view?usp=drive_link",
+    video: "videos/aalind-and-darshana.mp4",
   },
   {
     from: "Aanchal",
     clue: `[Placeholder clue for Aanchal]`,
     answers: ["aanchal"],
-    video: "https://drive.google.com/file/d/1CHwN_EBAopBQrqNOBtMcFdP6-n4g3ein/view?usp=drive_link",
+    video: "videos/aanchal.mp4",
   },
   {
     from: "Vaibhav & Diksha",
     clue: `[Placeholder clue for Vaibhav & Diksha]`,
     answers: ["vaibhav and diksha", "diksha and vaibhav", "vaibhav", "diksha"],
-    // NOTE: same link as Aanchal — replace with the correct one.
-    video: "https://drive.google.com/file/d/1CHwN_EBAopBQrqNOBtMcFdP6-n4g3ein/view?usp=drive_link",
+    video: "videos/vaibhav-and-diksha.mp4",
   },
   {
     from: "Aishwarya",
     clue: `[Placeholder clue for Aishwarya]`,
     answers: ["aishwarya"],
-    video: "https://drive.google.com/file/d/1bSdx-aJokQsWh4ctZ61c40s6GJRvMyNv/view?usp=drive_link",
+    video: "videos/aishwarya.mp4",
   },
   {
     from: "Alok",
@@ -75,7 +68,7 @@ That got you scared at spice club,
 Look and find out, What's that activity?
 Watching out, Locking his festivity?`,
     answers: ["stare", "staring"],
-    video: "https://drive.google.com/file/d/1n0oSGxANK-Ja7rp9LzYc8T5mUdbPuNkf/view?usp=drive_link",
+    video: "videos/alok.mp4",
   },
   {
     from: "Bhavna",
@@ -88,7 +81,7 @@ That helps you move up the ladder,
 It's an unusual creature she likes,
 But it's her favourite one, yikes!`,
     answers: ["snake", "snakes"],
-    video: "https://drive.google.com/file/d/1Hcj94l06K1IkedqhKbjUmzMx8XQ2pW3P/view?usp=drive_link",
+    video: "videos/bhavna.mp4",
   },
   {
     from: "Deeksha Ma'am",
@@ -101,13 +94,13 @@ Without her title we usually use,
 Tell that to open the doors,
 And get her latest news.`,
     answers: ["deeksha"],
-    video: "https://drive.google.com/file/d/1GmUqlhqf35C5dsU2vtAyFwt4rTYiywIY/view?usp=drive_link",
+    video: "videos/deeksha-ma-am.mp4",
   },
   {
     from: "Navneet",
     clue: `[Placeholder clue for Navneet]`,
     answers: ["navneet"],
-    video: "https://drive.google.com/file/d/17KqDTneGw2MgGsFdBgTs7CJPJTTUWwcU/view?usp=drive_link",
+    video: "videos/navneet.mp4",
   },
   {
     from: "Pritam",
@@ -120,13 +113,13 @@ As his life got a new individual,
 The one who made it true,
 Is the cue for next visual.`,
     answers: ["swati"],
-    video: "https://drive.google.com/file/d/1RDYIv4n7k49UcqcxoAeFkebMNkPrhnX9/view?usp=drive_link",
+    video: "videos/pritam.mp4",
   },
   {
     from: "Sakshi",
     clue: `[Placeholder clue for Sakshi]`,
     answers: ["sakshi"],
-    video: "https://drive.google.com/file/d/1GlD2Mgvs_ifUqJ774uc5eCfTZNwHNbs1/view?usp=drive_link",
+    video: "videos/sakshi.mp4",
   },
   {
     from: "Satyam",
@@ -139,44 +132,50 @@ You made something for him,
 But to your own frustration,
 It never got to distribution.`,
     answers: ["invitation", "invitations"],
-    video: "https://drive.google.com/file/d/1s561rxEagAvRaLPzONXSoPIY51QK0Ono/view?usp=drive_link",
+    video: "videos/satyam.mp4",
   },
   {
     from: "Shreaya",
     clue: `[Placeholder clue for Shreaya]`,
     answers: ["shreaya", "shreya"],
-    video: "https://drive.google.com/file/d/1Q5yJFnRxttRjVbaC7uHR5XJwDt6ier-c/view?usp=drive_link",
+    video: "videos/shreaya.mp4",
   },
   {
     from: "Simran",
     clue: `[Placeholder clue for Simran]`,
     answers: ["simran"],
-    video: "https://drive.google.com/file/d/1ED3n4GFPF-ANeu42Ch1USIlPr-_gYoyU/view?usp=drive_link",
+    video: "videos/simran.mp4",
   },
   {
     from: "Snehil",
     clue: `[Placeholder clue for Snehil]`,
     answers: ["snehil"],
-    video: "https://drive.google.com/file/d/11y5FcRedxNlyRMG9gdn6PTievbuo2nhw/view?usp=drive_link",
+    video: "videos/snehil.mp4",
   },
   {
     from: "Sristy",
     clue: `[Placeholder clue for Sristy]`,
     answers: ["sristy", "srishti", "shristi"],
-    video: "https://drive.google.com/file/d/1y0BP5NNW7n7arjoSx5qx-zn4ArcSxB22/view?usp=drive_link",
+    video: "videos/sristy.mp4",
   },
   {
     from: "Sunamya",
     clue: `[Placeholder clue for Sunamya]`,
     answers: ["sunamya"],
-    video: "https://drive.google.com/file/d/1uQSreXoBeH8aVagv2D4hu2t4phf_JGy7/view?usp=drive_link",
+    video: "videos/sunamya.mp4",
   },
   {
     from: "Verma",
     clue: `[Placeholder clue for Verma]`,
     answers: ["verma"],
-    // NOTE: same link as Sunamya — replace with the correct one.
-    video: "https://drive.google.com/file/d/1uQSreXoBeH8aVagv2D4hu2t4phf_JGy7/view?usp=drive_link",
+    // NOTE: same video as Sunamya — replace with the correct one.
+    video: "videos/sunamya.mp4",
+  },
+  {
+    from: "Shilpa",
+    clue: `[Placeholder clue for Shilpa]`,
+    answers: ["shilpa", "shlipa"],
+    video: "videos/shilpa.mp4",
   },
 ];
 
