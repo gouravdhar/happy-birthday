@@ -80,7 +80,10 @@
 
     if (solved) {
       $("fromName").textContent = `With love, from ${clue.from}`;
-      if ($("video").getAttribute("src") !== clue.video) $("video").src = clue.video;
+      $("videoWrap").hidden = !clue.video;
+      $("videoSoon").hidden = !!clue.video;
+      if (!clue.video) stopVideo();
+      else if ($("video").getAttribute("src") !== clue.video) $("video").src = clue.video;
       $("nextBtn").textContent = i + 1 < N ? "Next clue →" : "One last thing… 💖";
     } else {
       stopVideo();
