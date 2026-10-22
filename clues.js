@@ -169,7 +169,7 @@ That you relate just with him,
 What’s that special word?
 That others might use but with a trim.`,
     answers: ["tuddu", "tudddu"],
-    video: "videos/verma.mp4",
+    video: "videos/verma-2.mp4",
   },
   {
     from: "Shreya",
