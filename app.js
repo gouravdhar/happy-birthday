@@ -38,8 +38,8 @@
   // Must be called from a tap/click handler: browsers only allow playback with sound
   // when it starts from a user gesture.
   const playVideo = () => {
-    const v = $("video");
-    if (!$("videoPanel").hidden && v.getAttribute("src")) v.play().catch(() => {});
+    const v = $("finale").hidden ? $("video") : $("bonusVideo");
+    if (!v.closest("[hidden]") && v.getAttribute("src")) v.play().catch(() => {});
   };
 
   const stopVideo = () => {
@@ -59,6 +59,7 @@
   // ---------- Rendering ----------
   function show(screenId) {
     if (screenId !== "clue") stopVideo();
+    if (screenId !== "finale") $("bonusVideo").pause();
     ["intro", "clue", "finale"].forEach((id) => ($(id).hidden = id !== screenId));
     $("journeyBtn").hidden = !state.started;
     $("progressText").textContent = `${state.solved}/${N}`;
@@ -128,6 +129,11 @@
   // ---------- Events ----------
   $("introText").textContent = window.INTRO;
   $("finaleText").textContent = window.FINALE;
+  if (window.BONUS && window.BONUS.video) {
+    $("bonusTitle").textContent = window.BONUS.title;
+    $("bonusVideo").src = window.BONUS.video;
+    $("bonus").hidden = false;
+  }
 
   $("startBtn").onclick = () => {
     state.started = true;
@@ -162,6 +168,7 @@
     save();
     if (state.viewing >= N) confetti(true);
     render();
+    playVideo(); // starts the bonus video when this tap lands on the finale
   };
 
   $("journeyBtn").onclick = openDrawer;

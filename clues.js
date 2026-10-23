@@ -234,7 +234,7 @@ Or not go with us,
 They do seem onboard on screen,
 Dancing through all the fuss.`,
     answers: ["garba", "garba night"],
-    video: null,
+    video: "videos/gourav-saumya.mp4",
   },
   {
     from: "Simran",
@@ -275,6 +275,8 @@ Each belonged to a separate name.`,
     answers: ["thailand"],
     video: "videos/namrata.mp4",
   },
+  // TODO: uncomment once Shivani & Sid's video is ready.
+  /*
   {
     from: "Shivani & Sid",
     clue: `Your adopted couple,
@@ -288,6 +290,7 @@ Tell its name, to get the greet.`,
     answers: ["pfs"],
     video: null,
   },
+  */
   {
     from: "Ashutosh",
     clue: `I guess he has a hidden talent,
@@ -321,3 +324,9 @@ window.FINALE = `That's everyone!
 Happy 30th birthday, Riya 💖
 
 Never forget how loved, how beautiful and how special you are.`;
+
+// Shown on the final screen after every clue is solved.
+window.BONUS = {
+  title: "Bonus 🎁",
+  video: "videos/bonus-pritam.mp4",
+};
