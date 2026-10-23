@@ -275,8 +275,6 @@ Each belonged to a separate name.`,
     answers: ["thailand"],
     video: "videos/namrata.mp4",
   },
-  // TODO: uncomment once Shivani & Sid's video is ready.
-  /*
   {
     from: "Shivani & Sid",
     clue: `Your adopted couple,
@@ -288,9 +286,8 @@ Oh it’s been a cosmic treat,
 This place full of memories,
 Tell its name, to get the greet.`,
     answers: ["pfs"],
-    video: null,
+    video: "videos/sid-shivani.mp4",
   },
-  */
   {
     from: "Ashutosh",
     clue: `I guess he has a hidden talent,
