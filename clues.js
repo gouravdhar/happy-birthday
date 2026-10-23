@@ -12,7 +12,7 @@ She has touched a lot of lives during these 30 wonderful years and made them mor
 Maybe during that process of making others feel special, she forgot how beautiful and special she herself is!
 
 So, come let's remind her!
-But with a little condition. You need to give the right answers!!!`;
+But with a little twist. You need to give the right answers!!!`;
 
 window.CLUES = [
   {
