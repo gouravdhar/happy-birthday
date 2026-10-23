@@ -322,8 +322,8 @@ Happy 30th birthday, Riya 💖
 
 Never forget how loved, how beautiful and how special you are.`;
 
-// Shown on the final screen after every clue is solved.
+// Shown on the final screen as a button; the video appears only when it's tapped.
 window.BONUS = {
-  title: "Bonus 🎁",
+  title: "🎁 Play bonus video",
   video: "videos/bonus-pritam.mp4",
 };
